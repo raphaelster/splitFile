@@ -16,7 +16,7 @@ given file1.txt:
 	 It works pretty well, I think"
 	 
 the command:
-	splitFile file1.txt '\n\n' '([A-Z][a-z]*)' asdf
+	splitFile file1.txt '\n\n' '([A-Z][A-Za-z]*)' asdf
 	
 will split file1.txt into:
 	"It turns out, this is a"
@@ -31,6 +31,11 @@ and save the results to:
 	 pure Bash, so" > Bash.asdf
 	"I wrote this C++ program" > I.asdf
 	"It works pretty well, I think" > It.asdf
+	
+	
+Some considerations:
+	Will overwrite files without asking
+	Uses the first capture group for the filename, and reports an error if the filename can't be found
 
 	 
 
